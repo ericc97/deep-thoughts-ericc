@@ -1,3 +1,5 @@
+
+const path = require('path'); 
 const express = require('express');
 // import Apollo Server
 const { ApolloServer } = require('apollo-server-express');
@@ -36,6 +38,16 @@ startServer();
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+// Serve up static assets
+// check to see if node environment is in production... if yes express.js to sserver to serve any files in the react app build directory in the client folder
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
+// wildcard get route
+app.get('*', (req,res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+})
 
 db.once('open', () => {
   app.listen(PORT, () => {
