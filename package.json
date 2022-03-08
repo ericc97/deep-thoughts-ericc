@@ -106,6 +106,7 @@
     "is-yarn-global": "^0.3.0",
     "isarray": "^1.0.0",
     "json-buffer": "^3.0.0",
+    "jwt-decode": "^3.1.2",
     "kareem": "^2.3.2",
     "keyv": "^3.1.0",
     "latest-version": "^5.1.0",
@@ -222,7 +223,6 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed"
-
   },
   "repository": {
     "type": "git",
