@@ -3,7 +3,7 @@ import { Redirect, useParams } from 'react-router-dom';
 
 import ThoughtForm from '../components/ThoughtForm';
 import ThoughtList from '../components/ThoughtList';
-import FriendList from '../components/FriendList';
+import FriendsList from '../components/FriendList';
 
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
@@ -72,7 +72,7 @@ const Profile = (props) => {
         </div>
 
         <div className="col-12 col-lg-3 mb-3">
-          <FriendList
+          <FriendsList
             username={user.username}
             friendCount={user.friendCount}
             friends={user.friends}
