@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import FriendList from '../components/FriendsList';
 
 import ThoughtList from '../components/ThoughtList';
 
@@ -32,7 +33,11 @@ const Profile = () => {
         </div>
 
         <div className="col-12 col-lg-3 mb-3">
-          
+          <FriendList
+            username={user.username}
+            friendCount={user.friendCount}
+            friends={user.friends}
+            />
         </div>
       </div>
     </div>
